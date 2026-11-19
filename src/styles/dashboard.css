@@ -1,0 +1,104 @@
+.route-banner { position: relative; overflow: hidden; isolation: isolate; border-radius: 17px; border: 1px solid #dfd6f0; background: #ede5fc; min-height: 216px; display: flex; align-items: center; }
+.route-art { position: absolute; z-index: -2; inset: 0 0 0 auto; height: 100%; width: 80%; object-fit: cover; object-position: right 10%; }
+.route-banner::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg,#efe6fb 9%,#efe6fbeb 26%,#efe6fb00 59%); }
+.route-copy { padding: 25px 33px; color: #2a2340; max-width: 60%; }
+.route-kicker { display: inline-flex; align-items: center; gap: 7px; color: #634198; font-weight: 660; font-size: .78rem; background: #ffffff92; border: 1px solid #7f66ac26; padding: 5px 9px; border-radius: 20px; }
+.route-copy h2 { font-size: clamp(1.65rem, 2.5vw, 2.45rem); letter-spacing: -.055em; font-weight: 740; margin: 10px 0 4px; }
+.route-copy p { color: #554b69; font-size: .92rem; line-height: 1.55; }
+.hero-sep { margin: 0 7px; }
+.hero-cta { margin-top: 19px; padding-left: 17px; padding-right: 19px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin: 18px 0 29px; }
+.stat-card, .course-card, .award-list, .achievement-card { border: 1px solid var(--border); background: var(--surface); border-radius: 14px; box-shadow: var(--shadow); }
+.stat-card { display: flex; align-items: center; gap: 13px; min-height: 88px; padding: 16px; }
+.stat-icon { display: grid; place-items: center; height: 43px; width: 43px; flex-shrink: 0; border-radius: 13px; }
+.violet.stat-icon { color: #8056d4; background: #efe8fd; }
+.teal.stat-icon { color: #1d957d; background: #dff4ed; }
+.orange.stat-icon { color: #d26939; background: #fff0e5; }
+.gold.stat-icon { color: #b78320; background: #fbf1d8; }
+.stat-value { display: flex; align-items: baseline; gap: 4px; font-weight: 730; font-size: 1.55rem; line-height: 1.18; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.stat-value small { font-size: .91rem; color: var(--muted); font-weight: 550; letter-spacing: -.025em; }
+.stat-card p { color: var(--muted); font-size: .79rem; font-weight: 480; line-height: 1.45; margin-top: 4px; }
+.overview-grid { display: grid; grid-template-columns: minmax(0,1.85fr) minmax(240px,1fr); gap: 22px; align-items: start; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 14px; }
+.section-heading h2 { font-size: 1.35rem; letter-spacing: -.046em; }
+.section-heading a { font-size: .8rem; color: var(--purple); font-weight: 590; white-space: nowrap; }
+.section-heading a:hover { text-decoration: underline; }
+.course-grid, .catalog-grid, .achievement-grid { display: grid; gap: 15px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.course-card { display: flex; flex-direction: column; overflow: hidden; transition: border-color .18s, box-shadow .18s, transform .18s; }
+.course-card:hover { border-color: color-mix(in srgb,var(--purple) 45%, var(--border)); box-shadow: 0 5px 20px #46277911; transform: translateY(-2px); }
+.course-cover { aspect-ratio: 2.36; min-height: 102px; max-height: 188px; overflow: hidden; background: var(--lavender); display: grid; place-items: center; color: var(--purple); }
+.course-cover img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 50% 49%; }
+.course-card-body { padding: 16px 17px 18px; }
+.course-card h3 { font-size: 1.08rem; font-weight: 690; }
+.course-facts { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; margin: 9px 0 18px; color: var(--muted); }
+.course-facts span { display: inline-flex; align-items: center; gap: 5px; font-size: .765rem; }
+.course-progress-label { display: flex; justify-content: space-between; align-items: center; font-size: .76rem; color: var(--muted); margin-bottom: 8px; }
+.course-progress-label b { color: var(--purple); font-weight: 660; }
+.progress-bar { background: color-mix(in srgb,var(--border) 60%,var(--surface)); }
+.catalog-grid { max-width: 1060px; grid-template-columns: repeat(auto-fill,minmax(min(100%,290px),1fr)); gap: 20px; }
+.catalog-grid .course-cover { aspect-ratio: 2.05; max-height: 235px; }
+.award-list { padding: 0 17px; overflow: hidden; }
+.award-row { display: flex; align-items: center; gap: 12px; min-height: 77px; padding: 12px 0; }
+.award-row + .award-row { border-top: 1px solid var(--border); }
+.award-row:hover .award-row-copy strong { color: var(--purple); }
+.award-row-copy { min-width: 0; }
+.award-row-copy strong, .award-row-copy small { display: block; }
+.award-row-copy strong { font-weight: 650; font-size: .88rem; letter-spacing: -.024em; }
+.award-row-copy small { margin-top: 4px; color: var(--muted); font-size: .76rem; line-height: 1.45; }
+.award-status { color: var(--muted); margin-left: auto; }
+.award-badge { --medal: #c3842b; --medal-light: #ffdd85; --medal-bg: #fff6db; display: inline-grid; width: 41px; height: 46px; place-items: center; flex-shrink: 0; color: var(--medal); background: var(--medal); clip-path: polygon(50% 0%,94% 23%,94% 74%,50% 100%,6% 74%,6% 23%); }
+.award-badge span { display: grid; place-items: center; height: calc(100% - 3px); width: calc(100% - 3px); clip-path: inherit; background: linear-gradient(145deg,var(--medal-bg),var(--medal-light)); }
+.award-badge.violet { --medal: #8a62cf; --medal-light: #cdb5fa; --medal-bg: #f2eaff; }
+.award-badge.lime { --medal: #699a73; --medal-light: #aedcb0; --medal-bg: #e8f8e6; }
+.award-badge.blue { --medal: #477eba; --medal-light: #a4c4ef; --medal-bg: #e6f4ff; }
+.award-badge.rose { --medal: #b36190; --medal-light: #f4c2d7; --medal-bg: #fff0f7; }
+.achievement-grid { grid-template-columns: repeat(auto-fill,minmax(min(100%,250px),1fr)); }
+.achievement-card { padding: 22px; }
+.achievement-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 17px; }
+.achievement-top .award-badge { width: 54px; height: 60px; }
+.achievement-top .award-badge svg { width: 27px; height: 27px; }
+.status-chip { background: var(--surface-soft); color: var(--muted); padding: 5px 8px; border-radius: 20px; font-size: .72rem; display: inline-flex; align-items: center; gap: 5px; }
+.status-chip.unlocked { color: #206947; background: #dff6e9; }
+.achievement-card h2 { font-size: 1.15rem; }
+.achievement-card p { font-size: .89rem; line-height: 1.5; color: var(--muted); margin: 8px 0 22px; }
+@media (max-width: 1180px) {
+  .overview-grid { grid-template-columns: minmax(0,1.85fr) minmax(215px,1fr); gap: 16px; }
+  .stat-card { padding: 13px 12px; gap: 9px; }
+  .stat-icon { width: 37px; height: 37px; }
+  .course-card-body { padding: 14px; }
+  .award-list { padding: 0 13px; }
+  .award-row { gap: 8px; }
+}
+@media (max-width: 1050px) {
+  .overview-grid { grid-template-columns: 1fr; }
+  .award-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .award-row { padding: 12px 8px; }
+  .award-row + .award-row { border-top: 0; }
+  .stats-grid { gap: 9px; }
+  .stat-card { align-items: flex-start; flex-direction: column; }
+  .course-cover { max-height: 155px; }
+}
+@media (max-width: 800px) {
+  .stat-card { flex-direction: row; align-items: center; }
+}
+@media (max-width: 680px) {
+  .stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); margin: 12px 0 22px; }
+  .stat-card { min-height: 71px; padding: 12px; }
+  .award-list { display: block; }
+  .award-row + .award-row { border-top: 1px solid var(--border); }
+  .route-copy { padding: 22px; max-width: 75%; }
+  .route-copy h2 { font-size: 1.75rem; }
+  .route-art { width: 100%; object-fit: cover; object-position: 70% center; }
+  .route-banner::after { background: linear-gradient(90deg,#efe6fbfa 3%,#efe6fbde 30%,#efe6fb18 84%); }
+}
+@media (max-width: 500px) {
+  .course-grid { grid-template-columns: 1fr; }
+  .course-cover { max-height: 159px; }
+  .route-banner { min-height: 218px; }
+  .route-copy { padding: 19px; max-width: 88%; }
+  .route-copy p { max-width: 205px; font-size: .86rem; }
+  .route-copy h2 { font-size: 1.6rem; }
+  .route-art { object-position: 66% center; }
+  .stat-card p { font-size: .73rem; }
+  .section-heading h2 { font-size: 1.23rem; }
+}

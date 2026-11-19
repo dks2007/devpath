@@ -1,0 +1,64 @@
+.app-shell { --sidebar-width: 218px; }
+.sidebar { width: var(--sidebar-width); height: 100dvh; position: fixed; top: 0; left: 0; border-right: 1px solid var(--border); background: var(--surface); z-index: 10; }
+.sidebar-inner { display: flex; flex-direction: column; height: 100%; overflow-y: auto; }
+.sidebar-brand { padding: 30px 23px 34px; }
+.brand { display: inline-flex; gap: 10px; align-items: center; font-size: 1.57rem; letter-spacing: -.072em; font-weight: 780; line-height: 1; }
+.brand-accent { color: var(--purple); }
+.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; color: #fff; background: linear-gradient(145deg,#9b76e9,#6643c5); box-shadow: inset 0 1px 1px #ffffff40; }
+.brand-mark svg { width: 27px; height: 27px; stroke-width: 1.95; }
+.main-nav { padding: 0 14px; }
+.nav-caption { text-transform: uppercase; letter-spacing: .14em; font-size: .68rem; font-weight: 690; color: var(--muted); padding: 0 13px; margin-bottom: 11px; }
+.nav-item { display: flex; align-items: center; gap: 12px; color: var(--muted); border-radius: 9px; font-size: .91rem; font-weight: 540; padding: 13px 14px; margin: 3px 0; }
+.nav-item svg { stroke-width: 1.8; }
+.nav-item:hover { color: var(--text); background: var(--surface-soft); }
+.nav-item.active { color: var(--purple); background: var(--lavender); font-weight: 660; }
+.nav-item:last-child { margin-top: 29px; position: relative; }
+.nav-item:last-child::before { content: ''; position: absolute; height: 1px; background: var(--border); left: 4px; right: 4px; top: -15px; }
+.sidebar-foot { padding: 32px 19px 22px; margin-top: auto; }
+.level-card { padding: 16px; border: 1px solid color-mix(in srgb, var(--purple) 17%, var(--border)); border-radius: 13px; background: linear-gradient(116deg,var(--lavender),var(--surface)); }
+.level-heading { font-weight: 680; display: flex; align-items: center; gap: 8px; font-size: .92rem; }
+.level-glyph { display: grid; place-items: center; color: var(--purple); }
+.level-track { height: 5px; background: color-mix(in srgb, var(--purple) 14%, var(--surface)); margin: 14px 0 8px; }
+.level-detail, .local-signature { font-size: .76rem; color: var(--muted); }
+.level-detail b { color: var(--purple); }
+.local-signature { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 18px; }
+.workspace { margin-left: var(--sidebar-width); min-height: 100dvh; }
+.topbar { height: 67px; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 0 clamp(20px,3vw,48px); }
+.breadcrumbs, .topbar-tools, .header-date { display: flex; align-items: center; }
+.breadcrumbs { gap: 10px; font-size: .845rem; color: var(--muted); min-width: 0; }
+.breadcrumbs > span:last-child { font-weight: 590; color: var(--text); min-width: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.breadcrumbs > a { white-space: nowrap; }
+.breadcrumbs svg { opacity: .58; }
+.breadcrumbs a:hover { color: var(--purple); }
+.topbar-tools { gap: 18px; margin-left: auto; }
+.header-date { gap: 8px; font-size: .8rem; color: var(--muted); white-space: nowrap; }
+.theme-button { border-radius: 50%; }
+.page-content { max-width: 1570px; margin: 0 auto; padding: 30px clamp(20px,3vw,48px) 42px; outline: 0; }
+.skip-link { position: fixed; left: 16px; top: -100px; z-index: 99; padding: 12px 16px; border-radius: 8px; color: white; background: #5d35b1; }
+.skip-link:focus { top: 10px; }
+.open-nav, .nav-dialog:not([open]) { display: none; }
+.nav-dialog { position: fixed; inset: 0 auto 0 0; padding: 0; margin: 0; height: 100dvh; max-height: 100dvh; width: min(290px,88vw); max-width: 100vw; background: var(--surface); color: var(--text); border: 0; }
+.nav-dialog::backdrop { background: #1413236b; }
+.drawer-content { position: relative; height: 100%; }
+.close-nav { position: absolute; right: 12px; top: 29px; }
+@media (min-width: 1650px) {
+  .app-shell { --sidebar-width: 250px; }
+}
+@media (min-width: 801px) and (max-width: 1130px) {
+  .app-shell { --sidebar-width: 188px; }
+  .main-nav { padding: 0 10px; }
+  .sidebar-brand { padding-left: 21px; }
+}
+@media (max-width: 800px) {
+  .sidebar { display: none; }
+  .workspace { margin-left: 0; }
+  .open-nav { display: inline-grid; }
+  .topbar { height: 58px; justify-content: flex-start; padding: 0 18px; }
+  .page-content { padding-top: 23px; }
+}
+@media (max-width: 560px) {
+  .header-date { display: none; }
+  .page-content { padding-left: 16px; padding-right: 16px; }
+  .breadcrumbs { gap: 5px; }
+  .page-heading { margin-bottom: 18px; }
+}
